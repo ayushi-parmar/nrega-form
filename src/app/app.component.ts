@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-export type Edit = 'first' | 'second'|'third';
+// export type Edit = 'first' | 'second'|'third';
 
 
 @Component({
@@ -9,22 +9,22 @@ export type Edit = 'first' | 'second'|'third';
 })
 export class AppComponent {
  
-  editor: Edit = 'first';
+  // editor: Edit = 'first';
 
-  get showNameEditor() {
-    return this.editor == 'first'; 
-  }
+  // get showNameEditor() {
+  //   return this.editor == 'first'; 
+  // }
 
-  get showProfileEditor() {
-    return this.editor == 'second';
-  }
-  get showthirdEditor() {
-    return this.editor == 'third';
-  }
+  // get showProfileEditor() {
+  //   return this.editor == 'second';
+  // }
+  // get showthirdEditor() {
+  //   return this.editor == 'third';
+  // }
 
-  toggleEditor(type) {
-    this.editor = type;
-  }
+  // toggleEditor(type) {
+  //   this.editor = type;
+  // }
 
 
   

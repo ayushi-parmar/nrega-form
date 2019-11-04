@@ -4,18 +4,19 @@ import { ReactiveFormsModule} from '@angular/forms';
 import{FormsModule} from '@angular/forms';
 
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingcomponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
-import { ThirdComponent } from './third/third.component';
+// import { FirstComponent } from './first/first.component';
+// import { SecondComponent } from './second/second.component';
+// import { ThirdComponent } from './third/third.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent,
-    SecondComponent,
-    ThirdComponent
+    routingcomponents
+    // FirstComponent,
+    // SecondComponent,
+    // ThirdComponent
   ],
   imports: [
     BrowserModule,

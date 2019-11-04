@@ -1,12 +1,26 @@
-  <button   (click)="toggleEditor('first')">first</button>
+  <!-- <button   (click)="toggleEditor('first')">first</button>
 
   <button (click)="toggleEditor('second')">second</button>
 
   <button (click)="toggleEditor('third')">third</button>
-  <app-first *ngIf="showNameEditor"></app-first>
+  <app-first *ngIf="showNameEditor"></app-first
   <app-second *ngIf="showProfileEditor"></app-second>
   <app-third *ngIf="showthirdEditor"></app-third>
 
 
+  <router-outlet></router-outlet>
+   -->
 
-  
+
+   <!-- <div class="container"> -->
+    <a routerLinkActive="active" 
+       routerLink="/first">first</a> |
+
+    <a routerLinkActive="active" 
+       routerLink="/second">second</a>  |
+
+    <a routerLinkActive="active" 
+      routerLink="/third">third</a> 
+      
+    <router-outlet></router-outlet>
+  <!-- </div> -->
