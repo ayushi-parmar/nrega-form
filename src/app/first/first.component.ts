@@ -11,6 +11,7 @@ import { FormBuilder, FormArray, Validators } from '@angular/forms';
 export class FirstComponent  {
   title = 'nregaform';
   // public users = [];
+  // submitted=true;
   
 get village(){
   return this.registrationform.get('village')
@@ -20,18 +21,18 @@ get village(){
  
     }
     registrationform= this._formBuilder.group({
-      users:this._formBuilder.array([this._formBuilder.group({Sno:["", Validators.required],name:["", Validators.required],lname:["", Validators.required], age:["", Validators.required]}
-        // [this.createEmpFormGroup()], [Validators.required]
-      )]),
+      users:this._formBuilder.array([this.details()       
+      // [this.createEmpFormGroup()], [Validators.required]
+      ]),
 
-      village:["",[Validators.required, Validators.minLength(3)]],
+      village:["",[Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       gramp:["",Validators.required],
       block:["",Validators.required],
       image:["",Validators.required]
 
 
 
-      // village:new FormControl("village"),    (this is hidden becAUSE WE USE FORM BUILDER...OTHERWISE WE CAN DO THIS BY THIS METHOD)
+      // village:new FormControl("village"),    (this is comment becAUSE WE USE FORM BUILDER...OTHERWISE WE CAN DO THIS BY THIS METHOD)
       // gramp:new FormControl("gramp"),
       // block:new FormControl("block"),
       // image:new FormControl("")
@@ -40,6 +41,14 @@ get village(){
   
   
     });
+    details(){
+      return this._formBuilder.group({
+        Sno: ['', [Validators.required]],
+        name: ['', [Validators.required,]],
+        lname: ['', [Validators.required,]],
+        age: ['', [Validators.required]],
+      })
+    }
 
     // add(){
       //  this.users.push({})
@@ -51,10 +60,27 @@ addusers(){
   this.users.push(this._formBuilder.group({ Sno:["", Validators.required],name:["", Validators.required],lname:["", Validators.required], age:["", Validators.required]}));
 
 }
+
+validateAllFormFields(formGroup: FormGroup) {         
+  Object.keys(formGroup.controls).forEach(field => {  
+    const control = formGroup.get(field);             
+    if (control instanceof FormControl) {             
+      control.markAsTouched({ onlySelf: true });
+    } else if (control instanceof FormGroup) {        
+      this.validateAllFormFields(control);            
+    }
+  });
+}
+
 onSubmit() {
-  // this.registrationform.reset();
-  // TODO: Use EventEmitter with form value
-  console.log(this.registrationform.value);
+
+
+  if (this.registrationform.valid) {
+    alert('form submitted');
+  } else {
+    this.validateAllFormFields(this.registrationform); 
+  }
+  
 }
 }
 

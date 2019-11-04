@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-export type Ed = 'first' | 'second'|'third';
+export type Edit = 'first' | 'second'|'third';
 
 
 @Component({
@@ -9,10 +9,10 @@ export type Ed = 'first' | 'second'|'third';
 })
 export class AppComponent {
  
-  editor: Ed = 'first';
+  editor: Edit = 'first';
 
   get showNameEditor() {
-    return this.editor == 'first';
+    return this.editor == 'first'; 
   }
 
   get showProfileEditor() {
