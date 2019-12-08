@@ -10,17 +10,35 @@
 
   <router-outlet></router-outlet>
    -->
+   <div class="board-inner" id="status-buttons">
 
-
-   <!-- <div class="container"> -->
+   <ul class="nav nav-tabs" id="myTab">
+<li>
     <a routerLinkActive="active" 
-       routerLink="/first">first</a> |
-
+       routerLink="/first" data-toggle="tab"><span class="round-tabs one">
+      <i class="fa fa-user-o "></i>
+    </span></a> |
+</li>
+<li>
     <a routerLinkActive="active" 
-       routerLink="/second">second</a>  |
-
+       routerLink="/second" data-toggle="tab"><span class="round-tabs one">
+        <i class="fa fa-user-o "></i>
+      </span></a>  |
+</li>
+<li>
     <a routerLinkActive="active" 
-      routerLink="/third">third</a> 
-      
+      routerLink="/third" data-toggle="tab"><span class="round-tabs one">
+        <i class="fa fa-user-o "></i>
+      </span></a> 
+    </li> 
+   </ul> 
+   <div class="clearfix"></div>
+
+   <div class="board-inner" id="status-buttons">
+
     <router-outlet></router-outlet>
-  <!-- </div> -->
+
+
+
+
+    

@@ -6,6 +6,9 @@ import{FormsModule} from '@angular/forms';
 
 import { AppRoutingModule,routingcomponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ApplyComponent } from './third/apply/apply.component';
+import { BalanceComponent } from './third/balance/balance.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 // import { FirstComponent } from './first/first.component';
 // import { SecondComponent } from './second/second.component';
 // import { ThirdComponent } from './third/third.component';
@@ -13,10 +16,15 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    routingcomponents
+    routingcomponents,
+
+    ApplyComponent,
+    BalanceComponent,
+    PagenotfoundComponent,
     // FirstComponent,
     // SecondComponent,
-    // ThirdComponent
+    // ThirdComponent,
+    // PageNotFoundComponenComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +32,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule
   ],
+  bootstrap: [AppComponent],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
